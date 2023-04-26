@@ -1,3 +1,4 @@
+
 import telebot
 from telebot import types
 import vk_api
@@ -81,9 +82,9 @@ def get_text_messages(message):
 
         #Вац Ап
         def main():
-            chatIds = ["79147279900@c.us"]
-            resultCreate = greenAPI.groups.createGroup('Мой Лучегорск', chatIds)
-            result = greenAPI.sending.sendFileByUpload(resultCreate.data['chatId'], "photo.jpg", 'PicFromDisk.png')
+            chatIds = ["79520815182@c.us"]
+            #resultCreate = greenAPI.groups.createGroup('Мой Лучегорск', chatIds)
+            result = greenAPI.sending.sendFileByUpload('120363129778676951@g.us', "photo.jpg", 'PicFromDisk.png')
             print(result.data)
 
         if __name__ == "__main__":
@@ -102,18 +103,11 @@ def get_text_messages(message):
         requests.get('https://api.telegram.org/bot{}/sendMessage'.format(token), params=dict(chat_id='@moy_luchegorsk', text=text))
 
         def main():
-            chatIds = ["79147279900@c.us"]
-            resultCreate = greenAPI.groups.createGroup('Мой Лучегорск', chatIds)
+            chatIds = ["79520815182@c.us"]
+            #resultCreate = greenAPI.groups.createGroup('Мой Лучегорск', chatIds)
 
-            if resultCreate.code == 200:
-                print(resultCreate.data)
-                resultSend = greenAPI.sending.sendMessage(resultCreate.data['chatId'], text)
-                if resultSend.code == 200:
-                    print(resultSend.data)
-                else:
-                    print(resultSend.error)
-            else:
-                print(resultCreate.error)
+            resultSend = greenAPI.sending.sendMessage('120363129778676951@g.us', text)
+            print(resultSend.data)
 
         if __name__ == "__main__":
             main()
@@ -133,9 +127,9 @@ def get_text_messages(message):
 
         #ВацАп
         def main():
-            chatIds = ["79147279900@c.us"]
-            resultCreate = greenAPI.groups.createGroup('Мой Лучегорск', chatIds)
-            result = greenAPI.sending.sendFileByUpload(resultCreate.data['chatId'], "photo.jpg", 'PicFromDisk.png', text)
+            chatIds = ["79520815182@c.us"]
+            #resultCreate = greenAPI.groups.createGroup('Мой Лучегорск', chatIds)
+            result = greenAPI.sending.sendFileByUpload('120363129778676951@g.us', "photo.jpg", 'PicFromDisk.png', text)
             print(result.data)
 
         if __name__ == "__main__":
